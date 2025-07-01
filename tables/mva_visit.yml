@@ -126,6 +126,11 @@ tables:
             END
         type: number
         description: Status
+
+      - name: lapsed_or_returned
+        sql: "MAX ({TABLE.status}) OVER (PARTITION BY {TABLE.user_id})"
+        type: number
+        description: Identifying lapsed or returned
        
     measures:
  
@@ -213,11 +218,6 @@ tables:
         sql: "MAX({TABLE.visit_datetime})"
         type: time
         description: last_visits
- 
-      - name: lapsed_or_returned
-        sql: "MAX ({TABLE.status}) OVER (PARTITION BY {TABLE.user_id})"
-        type: number
-        description: Identifying lapsed or returned
  
     segments:
       - name: device_desktop
