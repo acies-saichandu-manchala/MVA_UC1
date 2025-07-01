@@ -23,12 +23,12 @@ tables:
 
       - name: device_first_seen
         column: device_first_seen
-        type: datetime
+        type: time
         description: Timestamp when the device was first seen
 
       - name: device_last_seen
         column: device_last_seen
-        type: datetime
+        type: time
         description: Timestamp when the device was last seen
 
       - name: user_device_rank

@@ -13,5 +13,5 @@ tables:
 
       - name: join_date
         column: date
-        type: date
+        type: time
         description: The date when the user registered or joined 

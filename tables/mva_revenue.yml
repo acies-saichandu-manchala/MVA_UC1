@@ -8,7 +8,7 @@ tables:
 
       - name: visit_date
         column: visit_date
-        type: date
+        type: time
         description: visit date of the user
 
       - name: user_id
@@ -49,7 +49,7 @@ tables:
       
       - name: revenue
         column: revenue
-        type: double
+        type: number
         description: revenue per user
 
       

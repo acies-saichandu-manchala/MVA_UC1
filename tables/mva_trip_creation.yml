@@ -8,7 +8,7 @@ tables:
 
       - name: date
         column: date
-        type: date
+        type: time
         description: The date associated with the visit or record
 
       - name: visit_id
