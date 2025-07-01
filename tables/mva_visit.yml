@@ -12,7 +12,7 @@ tables:
         relationship: one_to_one
         sql: "{TABLE.Visit_id}={mva_revenue_ltv_1.Visit_id} and {TABLE.visit_datetime}={mva_revenue_ltv_1.visit_date}"  
 
-      - name: trip_creation
+      - name: trip_creation_1
         relationship: one_to_one
         sql: "{TABLE.user_id}={trip_creation.user_id}"
 
