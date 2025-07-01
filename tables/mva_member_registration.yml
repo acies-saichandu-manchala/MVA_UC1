@@ -12,6 +12,6 @@ tables:
         description: Unique identifier for the user
 
       - name: join_date
-        column: date
+        column: join_date
         type: time
         description: The date when the user registered or joined 

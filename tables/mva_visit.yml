@@ -115,7 +115,7 @@ tables:
      
       - name: mem_reg_join_date
         column: "{member_registration_1.join_date}"
-        type: string
+        type: time
         public: false
  
       - name: status
