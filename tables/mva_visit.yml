@@ -197,7 +197,7 @@ tables:
         description: Total distinct other page views in the dataset
 
       - name: ltv
-        sql:  "{TABLE.profit}/{TABLE.total_unique_ids}"   #aggregate function mandatory
+        sql:  "{TABLE.profit}/{TABLE.total_unique_ids}"  
         type: number 
         description: ltv  
 
@@ -206,38 +206,17 @@ tables:
         type: number 
         description: last_visits
 
-      - name: lapsed_or_returned_users
+      - name: status
         sql: > 
             CASE 
-                WHEN DATEDIFF(month, {TABLE.mem_reg_join_date}, {TABLE.last_visit_date}) < 8 THEN 'Lapsed'
-                ELSE 'Returned'    
-            END AS user_category
+                WHEN DATEDIFF({TABLE.last_visit_date}, {TABLE.mem_reg_join_date}) < 8 THEN 0
+                ELSE 1
+            END AS status
 
-
-      # - name: lapsed_or_returned_users
-      #   sql: > 
-      #       WITH last_visits AS (
-      #           SELECT 
-      #               TABLE.user_id, 
-      #               MAX({TABLE.visit_datetime})
-      #           FROM TABLE
-      #           GROUP BY TABLE.user_id
-      #       ),
-      #       user_status AS (
-      #           SELECT 
-      #               mr.user_id,
-      #               mr.join_date AS join_date,
-      #               v.last_visit_date,
-                    # CASE 
-                    #     WHEN DATEDIFF(month, mr.join_date, v.last_visit_date) < 8 THEN 'Lapsed'
-                    #     ELSE 'Returned'    
-                    # END AS user_category
-      #           FROM member_registration_1 mr
-      #           LEFT JOIN last_visits v ON mr.user_id = v.user_id
-      #       )
-      #       SELECT * FROM user_status
-      #   type: string
-      #   description: Categorizes users as Lapsed or Returned
+      - name: lapsed_or_returned
+        sql: "MAX (TABLE.status) OVER ( PARTITION BY TABLE.user_id )"
+        type: number 
+        description: Identifying lapsed or returned
 
     segments:
       - name: device_desktop
