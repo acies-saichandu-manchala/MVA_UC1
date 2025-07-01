@@ -1,0 +1,37 @@
+tables:
+  - name: app_download_1
+    sql: {{ load_sql('mva_app_download') }}
+    description: app download mva information
+    public: true
+
+    dimensions:
+
+      - name: device_id
+        column: device_id
+        type: string
+        description: Unique identifier for the device associated with a user
+
+      - name: user_id
+        column: user_id
+        type: string
+        description: Unique identifier for the user
+
+      - name: device_type
+        column: device_type
+        type: string
+        description: Type of device used (e.g., mobile, tablet, desktop)
+
+      - name: device_first_seen
+        column: device_first_seen
+        type: datetime
+        description: Timestamp when the device was first seen
+
+      - name: device_last_seen
+        column: device_last_seen
+        type: datetime
+        description: Timestamp when the device was last seen
+
+      - name: user_device_rank
+        column: user_device_rank
+        type: number
+        description: Rank of the device for the user based on usage or preference

@@ -1,0 +1,22 @@
+tables:
+  - name: trip_creation_1
+    sql: {{ load_sql('mva_trip_creation') }}
+    description: trip creation mva information
+    public: true
+
+    dimensions:
+
+      - name: date
+        column: date
+        type: date
+        description: The date associated with the visit or record
+
+      - name: visit_id
+        column: visit_id
+        type: string
+        description: Unique identifier for a visit
+
+      - name: user_id
+        column: user_id
+        type: string
+        description: Unique identifier for the user

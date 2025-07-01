@@ -1,0 +1,17 @@
+tables:
+  - name: member_registration_1
+    sql: {{ load_sql('mva_member_registration') }}
+    description: member registration mva information
+    public: true
+
+    dimensions:
+
+      - name: user_id
+        column: user_id
+        type: string
+        description: Unique identifier for the user
+
+      - name: join_date
+        column: date
+        type: date
+        description: The date when the user registered or joined 
