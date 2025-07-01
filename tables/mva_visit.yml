@@ -14,7 +14,7 @@ tables:
 
       - name: trip_creation_1
         relationship: one_to_one
-        sql: "{TABLE.user_id}={trip_creation.user_id}"
+        sql: "{TABLE.user_id}={trip_creation_1.user_id}"
 
       - name: app_download_1
         relationship: one_to_one
@@ -196,7 +196,7 @@ tables:
         description: ltv  
 
       - name: last_visits
-        sql: "MAX(TABLE.visit_datetime) AS last_visit_date"
+        sql: "MAX({TABLE.visit_datetime})"
         type: number 
         description: last_visits
 
