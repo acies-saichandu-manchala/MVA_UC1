@@ -6,4 +6,4 @@ SELECT
     visit_date,
     cost
 FROM    
-    MVA.COST
+    sstdepot.MVA.COST

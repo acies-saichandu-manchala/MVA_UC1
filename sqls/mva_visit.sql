@@ -1,6 +1,6 @@
 SELECT
     session_id,
-    Visit_id,
+    visit_id,
     user_id,
     unique_id,
     device_id,
@@ -15,4 +15,4 @@ SELECT
     number_of_other_page_viewed,
     visit_datetime
 FROM
-    MVA.VISIT
+    sstdepot.MVA.VISIT

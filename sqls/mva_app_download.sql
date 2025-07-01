@@ -6,4 +6,4 @@ SELECT
     device_last_seen,
     user_device_rank   
 FROM
-    MVA.APP_DOWNLOAD
+    sstdepot.MVA.APP_DOWNLOAD

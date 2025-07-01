@@ -8,7 +8,7 @@ tables:
       - name: visit_id
         column: visit_id
         type: string
-        description: Visit_id of a user
+        description: visit_id of a user
         primary_key: true
 
       - name: unique_id
@@ -39,7 +39,7 @@ tables:
     measures:
       
       - name: sum_cost
-        sql: SUM({TABLE.cost})   #aggregate function mandatory
+        sql: SUM({TABLE.cost})  
         type: number 
         description: total cost  
 

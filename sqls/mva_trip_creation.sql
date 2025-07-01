@@ -3,4 +3,4 @@ SELECT
     visit_id,
     user_id 
 FROM
-    MVA.TRIP_CREATION   
+    sstdepot.MVA.TRIP_CREATION   

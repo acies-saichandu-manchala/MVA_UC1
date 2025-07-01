@@ -5,8 +5,8 @@ SELECT
     entry_channel,
     entry_page,
     device,
-    Visit_id,
+    visit_id,
     session_id,
     revenue
 FROM    
-    MVA.REVENUE
+    sstdepot.MVA.REVENUE

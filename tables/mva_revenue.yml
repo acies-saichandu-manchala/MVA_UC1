@@ -36,7 +36,7 @@ tables:
         type: string
         description: type of device  
 
-      - name: Visit_id
+      - name: visit_id
         column: visit_id
         type: string
         description: Visit_id of a user  
@@ -86,7 +86,7 @@ tables:
         description: Total distinct devices in the dataset
 
       - name: total_visits
-        sql: Visit_id
+        sql: visit_id
         type: count_distinct
         description: Total distinct visits in the dataset
 
