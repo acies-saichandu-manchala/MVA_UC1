@@ -209,7 +209,7 @@ tables:
       - name: status
         sql: > 
             CASE 
-                WHEN DATEDIFF({TABLE.last_visit_date}, {TABLE.mem_reg_join_date}) < 8 THEN 0
+                WHEN DATEDIFF({TABLE.visit_datetime}, {TABLE.mem_reg_join_date}) < 8 THEN 0
                 ELSE 1
             END AS status
 
