@@ -117,8 +117,16 @@ tables:
         column: {member_registration_1.join_date}
         type: string
         public: false
-        
 
+      - name: status
+        sql: > 
+            CASE 
+                WHEN DATEDIFF({TABLE.visit_datetime}, {TABLE.mem_reg_join_date}) < 240 THEN 0
+                ELSE 1
+            END AS status
+        type: number
+        description: Status 
+        
     measures:
 
       - name: profit
@@ -206,15 +214,8 @@ tables:
         type: number 
         description: last_visits
 
-      - name: status
-        sql: > 
-            CASE 
-                WHEN DATEDIFF({TABLE.visit_datetime}, {TABLE.mem_reg_join_date}) < 8 THEN 0
-                ELSE 1
-            END AS status
-
       - name: lapsed_or_returned
-        sql: "MAX (TABLE.status) OVER ( PARTITION BY TABLE.user_id )"
+        sql: "MAX ({TABLE.status}) OVER (PARTITION BY {TABLE.user_id})"
         type: number 
         description: Identifying lapsed or returned
 
