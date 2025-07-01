@@ -112,11 +112,6 @@ tables:
         column: "{mva_cost_ltv_1.cost}"
         type: number
         description: Cost
-
-      # - name: mem_reg_user_id
-      #   column: {member_registration_1.user_id}
-      #   type: string
-      #   public: false
       
       - name: mem_reg_join_date
         column: {member_registration_1.join_date}
