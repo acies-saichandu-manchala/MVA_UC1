@@ -39,7 +39,7 @@ tables:
     measures:
       
       - name: sum_cost
-        sql: SUM({TABLE.cost})  
+        sql: SUM(IFNULL({TABLE.cost}, 0)) 
         type: number 
         description: total cost  
 
