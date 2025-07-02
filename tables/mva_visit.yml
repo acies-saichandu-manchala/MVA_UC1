@@ -135,7 +135,7 @@ tables:
     measures:
  
       - name: profit
-        sql: SUM({TABLE.calc_revenue}-{TABLE.v_cost})  
+        sql: SUM(COALESCE({TABLE.calc_revenue}-{TABLE.v_cost}, 0))
         type: number
         description: Profit earned      
        
